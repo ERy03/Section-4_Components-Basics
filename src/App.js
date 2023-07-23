@@ -1,4 +1,5 @@
 import componentsImage from "./assets/images/components.png";
+import Concept from "./components/Concept/Concept";
 import Header from "./components/Header/Header";
 import stateImage from "./assets/images/state.png";
 import eventsImage from "./assets/images/events.png";
@@ -29,11 +30,13 @@ function App() {
     <div>
       <Header />
       <ul id="concepts">
-        <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
-        </li>
+        {concepts.map((concept) => (
+          <Concept
+            image={concept.image}
+            title={concept.title}
+            description={concept.description}
+          />
+        ))}
       </ul>
     </div>
   );
